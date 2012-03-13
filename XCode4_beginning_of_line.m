@@ -71,7 +71,7 @@ static void doCommandBySelector( id self_, SEL _cmd, SEL selector )
             if (codeStartRange.location != NSNotFound)
             {
                 NSUInteger caretLocation = selectedRange.location - lineRange.location;
-                if (caretLocation > codeStartRange.location || caretLocation == 0)
+                if (caretLocation > codeStartRange.location)
                 {
                     [self setSelectedRange:NSMakeRange(lineRange.location + codeStartRange.location, (caretLocation - codeStartRange.location))];
                     [self delete:nil];
